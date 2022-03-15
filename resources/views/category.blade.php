@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <a href="/categories/{{ $posts[0]->Category->slug }}">
+                <a href="/blog?category={{ $posts[0]->Category->slug }}">
                 @foreach ($posts as $post)
                 <div class="card bg-dark text-white">
                     <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}"class="card-img" alt="{{ $category->name }}">
