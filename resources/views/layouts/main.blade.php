@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
 
     <!-- My CSS -->
-    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Laravel Blog | {{ $title }}</title>
   </head>
   <body id="home">

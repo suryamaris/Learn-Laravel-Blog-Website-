@@ -1,0 +1,45 @@
+body{
+  min-height: 500px;
+}
+.jumbotron {
+  padding-top: 6rem;
+  background-color: #8ad8f7;
+}
+
+#projects {
+  background-color: #8ad8f7;
+}
+
+footer {
+  margin-top: 200px;
+  background-color: #021569;
+  width: 100%;
+  position:absolute;
+  bottom: 0px;
+}
+
+section {
+  padding-top: 5rem;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-registration input {
+  border-radius: 0;
+  margin-bottom: -1px;
+}
+  
