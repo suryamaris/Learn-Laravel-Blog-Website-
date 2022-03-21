@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route; 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\RegisterController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +46,11 @@ Route::get('categories', function(){
     ]);
 });
 
-Route::get('/login', [loginController::class, 'index']); 
+Route::get('/login', [loginController::class, 'index'])->middleware('guest')->name('login'); 
+Route::post('/login', [loginController::class, 'authenticate']); 
+Route::post('/logout', [loginController::class, 'logout']); 
 
-Route::get('/register', [RegisterController::class, 'index']); 
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest'); 
 Route::post('/register', [RegisterController::class, 'create']); 
+
+Route::get('/dashboard',[DashboardController::class, 'index'])->middleware('auth');
