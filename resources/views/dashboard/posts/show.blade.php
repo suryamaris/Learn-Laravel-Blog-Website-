@@ -11,7 +11,6 @@
 
             <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="img-fluid my-5" alt="{{  $post->category->name  }}">
         {!! $post->body !!}
-        <a href="/blog">Back to Posts </a>
         </div>
     </div>
 </div>
