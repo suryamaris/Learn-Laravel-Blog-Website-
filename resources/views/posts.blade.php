@@ -22,7 +22,13 @@
 
     @if ($posts->count())
     <div class="card mb-3">
-        <img src="https://source.unsplash.com/1200x400?{{ $posts[0]->category->name }}" class="card-img-top" alt="...">
+      @if ($posts[0]->image)
+        <div style="max-height: 350px; overflow:hidden;">
+           <img src="{{ asset('storage/'.$posts[0]->image) }}" class="img-fluid" alt="{{  $posts[0]->category->name  }}">
+        </div>
+      @else 
+      <img src="https://source.unsplash.com/1200x400?{{ $posts[0]->category->name }}" class="card-img-top" alt="{{ $posts[0]->category->name }}">
+      @endif
         <div class="card-body text-center">
           <h3 class="card-title"> <a href="/posts/{{ $posts[0]->slug }}" class="text-decoration-none text-dark"> {{ $posts[0]->title }}</a></h3>
           <small class="text-muted">
@@ -39,7 +45,12 @@
         <div class="col-md-4 mb-3">
           <div class="card">
             <div class="position-absolute bg-dark px-3 py2"><a href="/blog?category={{ $post->Category->slug }}" class="text-decoration-none text-light">{{ $post->category->name }}</a></div>
+            @if ($post->image)
+                <img src="{{ asset('storage/'.$post->image) }}" class="img-fluid" alt="{{  $post->category->name  }}">
+            @else 
             <img src="https://source.unsplash.com/800x500?{{ $post->category->name }}" class="card-img-top" alt="{{ $post->category->name }}">
+            @endif
+
             <div class="card-body">
               <h5 class="card-title">{{ $post->title }}</h5>
               <p>By <a href="/blog?user={{ $post->User->username }}" class="text-decoration-none">{{ $post->User->name }}</a>  {{ $post->created_at->diffForHumans() }}</p>
