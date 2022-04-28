@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Models\post;
+use App\Models\Post;
 use App\Models\Post as ModelsPost;
 
 class PostController extends Controller
